@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Duddu & Bubbu</title>
+
+<style>
+body{
+  margin:0;
+  padding:20px;
+  min-height:100vh;
+  background:linear-gradient(180deg,#4b0b4d,#2b0b3a);
+  font-family:Poppins,sans-serif;
+  color:white;
+  text-align:center;
+}
+
+.hug-box{
+  margin-top:20px;
+}
+
+.hug-box img{
+  width:250px;
+  border-radius:12px;
+  animation:pop 1.2s ease;
+}
+
+@keyframes pop{
+  0%{transform:scale(0.7);opacity:0;}
+  100%{transform:scale(1);opacity:1;}
+}
+
+.letter{
+  margin:25px auto;
+  background:rgba(255,255,255,0.12);
+  padding:18px;
+  border-radius:12px;
+  max-width:800px;
+  font-size:1rem;
+  line-height:1.6;
+}
+
+.btn{
+  background:#ff99c8;
+  padding:12px 25px;
+  border:none;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:700;
+  color:#4b003e;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>I want to hug you but this is not possible that is why i hug you virtually ❤️</h1>
+
+<div class="hug-box">
+  <img src="hug2.jpeg" alt="hug">
+</div>
+
+<!-- ✅ Auto music added -->
+<audio id="music" autoplay muted loop>
+  <source src="music2.mp3">
+</audio>
+
+<div class="letter">
+  <h2>My Love… ❤️</h2>
+  <p>
+    I am really sorry for the moments I hurt you.  
+    I never wanted to make you feel alone.  
+    You mean everything to me… more than I can ever express.  
+    Thank you for your patience, your love, and your presence.  
+    You are my forever.  
+  </p>
+  <p style="font-weight:700;margin-top:10px;">— Yours always ♥</p>
+</div>
+
+<a href="page3.html">
+  <button class="btn">plz click✨</button>
+</a>
+
+<script>
+// 🔊 Unmute trick so autoplay works on Chrome
+const music = document.getElementById("music");
+setTimeout(()=>{
+    music.muted = false;
+    music.play().catch(()=>{});
+}, 300);
+</script>
+
+</body>
+</html>

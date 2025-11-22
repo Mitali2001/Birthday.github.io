@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sorry — Click the Button</title>
+<style>
+html,body{
+  height:100%;margin:0;
+  font-family:Inter, Poppins, sans-serif;
+  background:#3b0b4d;color:#fff;
+}
+.page{
+  height:100vh;display:flex;align-items:center;
+  justify-content:center;flex-direction:column;
+  text-align:center;padding:24px;
+}
+.card{
+  background:rgba(0,0,0,0.25);
+  padding:28px;border-radius:18px;max-width:820px;
+}
+h2{margin:0 0 12px}
+.love-btn{
+  background:linear-gradient(90deg,#ffd6e8,#fff);
+  color:#ff2f67;border-radius:40px;
+  padding:12px 28px;font-size:1.1rem;
+  font-weight:800;cursor:pointer;border:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.06)}
+  100%{transform:scale(1)}
+}
+
+.hearts{
+  position:absolute;inset:0;pointer-events:none;
+  overflow:hidden;
+}
+.hearts i{
+  position:absolute;width:18px;height:18px;
+  background-color:#ff5a82;border-radius:50%;
+  opacity:.9;transform:translateY(120vh);
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="card">
+    <h2>I want to tell you something…</h2>
+    <p>Please click this button ❤️</p>
+    <button class="love-btn" id="enterBtn">I LOVE YOU</button>
+  </div>
+
+  <div class="hearts" id="hearts"></div>
+</div>
+
+<script>
+const hearts = document.getElementById('hearts');
+
+function makeHeart(){
+  const i = document.createElement('i');
+  const size = 12 + Math.random()*28;
+  i.style.width = i.style.height = size+'px';
+  i.style.left = Math.random()*100+'%';
+  i.style.transition = 'transform 6s linear, opacity 2s linear';
+  hearts.appendChild(i);
+
+  setTimeout(()=>{ i.style.transform = 'translateY(-40vh)' },50);
+  setTimeout(()=>{ i.style.opacity = 0 },4500);
+  setTimeout(()=>{ i.remove() },7000);
+}
+setInterval(makeHeart,400);
+
+document.getElementById('enterBtn').addEventListener('click', ()=>{
+  window.location.href = "page2.html";
+});
+</script>
+
+<!-- 🔥 AUTOPLAY MUSIC ADDED HERE -->
+<audio id="music" autoplay muted loop>
+  <source src="music2.mp3">
+</audio>
+
+<script>
+const music = document.getElementById("music");
+setTimeout(()=>{
+    music.muted = false;
+    music.play().catch(()=>{});
+}, 600);
+</script>
+<!-- END MUSIC -->
+
+</body>
+</html>
